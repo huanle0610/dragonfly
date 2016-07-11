@@ -1,0 +1,13 @@
+{
+	"description": "Codeiginter Extjs4 Demo",
+	"name": "dragonfly",
+	"type": "project",
+	"homepage": "http://blog.php-admin.com/extjs4/extjs_dragonfly.md",
+	"license": "MIT",
+	"support": {
+		"source": "https://github.com/huanle0610/dragonfly"
+	},
+	"require": {
+		"php": ">=5.2.4"
+	}
+}

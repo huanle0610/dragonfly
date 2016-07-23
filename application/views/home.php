@@ -10,6 +10,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="resources/css/main.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $extjs['css'];?>">
     <link rel="stylesheet" type="text/css" href="<?php echo $extjs['font-awesome'];?>">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="resources/zeroclipboard/jquery.zeroclipboard.min.js"></script>
     <script src="<?php echo $extjs['js'];?>"></script>
     <script src="<?php echo site_url('direct/api');?>"></script>
 
@@ -38,6 +40,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
 </div>
 <div class="flaeQ"></div>
+
+<script>
+    $(function(){
+        $("body")
+            .on("copy", ".zclip", function(/* ClipboardEvent */ e) {
+                e.clipboardData.clearData();
+                e.clipboardData.setData("text/plain", Ext.getCmp(this.id).getCopyText());
+                e.preventDefault();
+            }).on("aftercopy", ".zclip", function(/* ClipboardEvent */ e) {
+                Ext.getCmp(this.id).afterCopy();
+            });
+    })
+</script>
 
 <script src="resources/js/LAB.min.js"></script>
 </body>
